@@ -1,5 +1,5 @@
 //
-//  UIBarButtonItem-Extention.swift
+//  UIBarButtonItem-Extension.swift
 //  DY
 //
 //  Created by zhang on 16/11/30.
