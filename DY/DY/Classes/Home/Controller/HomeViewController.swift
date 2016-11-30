@@ -8,8 +8,17 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
 
+private let kPageTitleH:CGFloat = 40
+class HomeViewController: UIViewController {
+    //MARK: - 懒加载属性
+    fileprivate lazy var pageTitleView:PageTitleView = {
+        let rect = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kPageTitleH)
+        let titles = ["推荐", "游戏", "娱乐", "趣玩"]
+        let pageTitleV = PageTitleView(frame: rect, titlesArr: titles)
+        return pageTitleV
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,13 +28,19 @@ class HomeViewController: UIViewController {
 
 }
 
-//MARK - 设置UI界面
+//MARK: - 设置UI界面
 extension HomeViewController {
     fileprivate func setupUI() {
+        automaticallyAdjustsScrollViewInsets = false
         //设置导航条
         setupNavigationBar()
+        
+        //添加pageTitleView
+        view.addSubview(pageTitleView)
+        
     }
     
+    //MARK: - 设置导航栏
     fileprivate func setupNavigationBar() {
         let logoBtn = UIButton()
         logoBtn.setImage(UIImage(named: "logo"), for: .normal)
@@ -42,4 +57,6 @@ extension HomeViewController {
         navigationItem.rightBarButtonItems = [historyItem, searchItem, qrcodeItem]
         
     }
+    
+    
 }
