@@ -107,37 +107,13 @@
 			isa = PBXGroup;
 			children = (
 				1F29478F1DEE685100A4BBB5 /* Main */,
-				1F29478D1DEE685100A4BBB5 /* Home */,
-				1F29478E1DEE685100A4BBB5 /* Live */,
-				1F29478C1DEE685100A4BBB5 /* Follow */,
-				1F2947901DEE685100A4BBB5 /* Profile */,
-				1F2947911DEE685100A4BBB5 /* Tools */,
+				1F2947A81DEE94F900A4BBB5 /* Home */,
+				1F2947A51DEE94DB00A4BBB5 /* Live */,
+				1F2947A41DEE94DB00A4BBB5 /* Follow */,
+				1F2947A61DEE94DB00A4BBB5 /* Profile */,
+				1F2947A71DEE94DB00A4BBB5 /* Tools */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		1F29478C1DEE685100A4BBB5 /* Follow */ = {
-			isa = PBXGroup;
-			children = (
-				1F2947971DEE7CF100A4BBB5 /* Follow.storyboard */,
-			);
-			path = Follow;
-			sourceTree = "<group>";
-		};
-		1F29478D1DEE685100A4BBB5 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				1F2947921DEE7CAD00A4BBB5 /* Home.storyboard */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		1F29478E1DEE685100A4BBB5 /* Live */ = {
-			isa = PBXGroup;
-			children = (
-				1F29479E1DEE929700A4BBB5 /* Live.storyboard */,
-			);
-			path = Live;
 			sourceTree = "<group>";
 		};
 		1F29478F1DEE685100A4BBB5 /* Main */ = {
@@ -149,19 +125,47 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		1F2947901DEE685100A4BBB5 /* Profile */ = {
+		1F2947A41DEE94DB00A4BBB5 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				1F2947971DEE7CF100A4BBB5 /* Follow.storyboard */,
+			);
+			name = Follow;
+			path = Main/Follow;
+			sourceTree = "<group>";
+		};
+		1F2947A51DEE94DB00A4BBB5 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				1F29479E1DEE929700A4BBB5 /* Live.storyboard */,
+			);
+			name = Live;
+			path = Main/Live;
+			sourceTree = "<group>";
+		};
+		1F2947A61DEE94DB00A4BBB5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				1F2947A11DEE929F00A4BBB5 /* Profile.storyboard */,
 			);
-			path = Profile;
+			name = Profile;
+			path = Main/Profile;
 			sourceTree = "<group>";
 		};
-		1F2947911DEE685100A4BBB5 /* Tools */ = {
+		1F2947A71DEE94DB00A4BBB5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Tools;
+			name = Tools;
+			path = Main/Tools;
+			sourceTree = "<group>";
+		};
+		1F2947A81DEE94F900A4BBB5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1F2947921DEE7CAD00A4BBB5 /* Home.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,7 +331,7 @@
 				1F2947981DEE7CF100A4BBB5 /* Base */,
 			);
 			name = Follow.storyboard;
-			path = ../Main;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		1F29479E1DEE929700A4BBB5 /* Live.storyboard */ = {
@@ -336,6 +340,7 @@
 				1F29479F1DEE929700A4BBB5 /* Base */,
 			);
 			name = Live.storyboard;
+			path = ../../Live;
 			sourceTree = "<group>";
 		};
 		1F2947A11DEE929F00A4BBB5 /* Profile.storyboard */ = {
@@ -344,6 +349,7 @@
 				1F2947A21DEE929F00A4BBB5 /* Base */,
 			);
 			name = Profile.storyboard;
+			path = ../../Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
