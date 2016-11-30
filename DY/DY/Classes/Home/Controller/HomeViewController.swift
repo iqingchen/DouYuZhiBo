@@ -35,7 +35,7 @@ extension HomeViewController {
         //设置左边按钮
         let size = CGSize(width: 40, height: 40)
 
-        let historyItem = UIBarButtonItem(image: "image_my_history", highlightImage: "image_my_history_click", size: size)
+        let historyItem = UIBarButtonItem(image: "image_my_history", highlightImage: "Image_my_history_click", size: size)
         let searchItem = UIBarButtonItem(image: "btn_search", highlightImage: "btn_search_clicked", size: size)
         let qrcodeItem = UIBarButtonItem(image: "Image_scan", highlightImage: "Image_scan_click", size: size)
         
