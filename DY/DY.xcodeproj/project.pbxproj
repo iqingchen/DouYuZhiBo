@@ -14,9 +14,9 @@
 		1F2947811DED833F00A4BBB5 /* DYTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2947801DED833F00A4BBB5 /* DYTests.swift */; };
 		1F2947941DEE7CAD00A4BBB5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F2947921DEE7CAD00A4BBB5 /* Home.storyboard */; };
 		1F2947991DEE7CF100A4BBB5 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F2947971DEE7CF100A4BBB5 /* Follow.storyboard */; };
-		1F29479D1DEE7DFB00A4BBB5 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29479C1DEE7DFB00A4BBB5 /* MainTabBarViewController.swift */; };
 		1F2947A01DEE929700A4BBB5 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F29479E1DEE929700A4BBB5 /* Live.storyboard */; };
 		1F2947A31DEE929F00A4BBB5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F2947A11DEE929F00A4BBB5 /* Profile.storyboard */; };
+		1F2947AD1DEE96ED00A4BBB5 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2947AA1DEE96ED00A4BBB5 /* MainTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +41,9 @@
 		1F2947821DED833F00A4BBB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F2947931DEE7CAD00A4BBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DY/Base.lproj/Home.storyboard; sourceTree = SOURCE_ROOT; };
 		1F2947981DEE7CF100A4BBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DY/Base.lproj/Follow.storyboard; sourceTree = SOURCE_ROOT; };
-		1F29479C1DEE7DFB00A4BBB5 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		1F29479F1DEE929700A4BBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DY/Base.lproj/Live.storyboard; sourceTree = SOURCE_ROOT; };
 		1F2947A21DEE929F00A4BBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DY/Base.lproj/Profile.storyboard; sourceTree = SOURCE_ROOT; };
+		1F2947AA1DEE96ED00A4BBB5 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				1F29476F1DED833F00A4BBB5 /* Main.storyboard */,
-				1F29479C1DEE7DFB00A4BBB5 /* MainTabBarViewController.swift */,
+				1F2947A91DEE96ED00A4BBB5 /* Controller */,
+				1F2947AB1DEE96ED00A4BBB5 /* Model */,
+				1F2947AC1DEE96ED00A4BBB5 /* View */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -163,9 +165,55 @@
 		1F2947A81DEE94F900A4BBB5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1F2947AE1DEE96F500A4BBB5 /* Controller */,
+				1F2947AF1DEE96F500A4BBB5 /* Model */,
+				1F2947B01DEE96F500A4BBB5 /* View */,
 				1F2947921DEE7CAD00A4BBB5 /* Home.storyboard */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		1F2947A91DEE96ED00A4BBB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F2947AA1DEE96ED00A4BBB5 /* MainTabBarViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F2947AB1DEE96ED00A4BBB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1F2947AC1DEE96ED00A4BBB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F2947AE1DEE96F500A4BBB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F2947AF1DEE96F500A4BBB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1F2947B01DEE96F500A4BBB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F29476C1DED833F00A4BBB5 /* AppDelegate.swift in Sources */,
-				1F29479D1DEE7DFB00A4BBB5 /* MainTabBarViewController.swift in Sources */,
+				1F2947AD1DEE96ED00A4BBB5 /* MainTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
