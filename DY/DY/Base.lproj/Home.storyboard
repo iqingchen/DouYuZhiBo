@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="a1h-Y3-Kv1">
             <objects>
-                <viewController id="TZz-nB-7lH" sceneMemberID="viewController">
+                <viewController id="TZz-nB-7lH" customClass="HomeViewController" customModule="DY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RC3-aA-y5L"/>
                         <viewControllerLayoutGuide type="bottom" id="Ymm-6j-6mF"/>
@@ -26,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxf-aY-64h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-430" y="-1697"/>
+            <point key="canvasLocation" x="-390" y="-1697"/>
         </scene>
         <!--首页-->
         <scene sceneID="gKU-8o-Z8n">
