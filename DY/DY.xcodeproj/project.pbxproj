@@ -22,6 +22,7 @@
 		1F2947BC1DEEBCD600A4BBB5 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2947BB1DEEBCD600A4BBB5 /* PageTitleView.swift */; };
 		1F2947BE1DEEC10300A4BBB5 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2947BD1DEEC10300A4BBB5 /* Common.swift */; };
 		1F2947C01DEECB1E00A4BBB5 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2947BF1DEECB1E00A4BBB5 /* PageContentView.swift */; };
+		1F2947C21DEECF8900A4BBB5 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2947C11DEECF8900A4BBB5 /* UIColor-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		1F2947BB1DEEBCD600A4BBB5 /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		1F2947BD1DEEC10300A4BBB5 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		1F2947BF1DEECB1E00A4BBB5 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
+		1F2947C11DEECF8900A4BBB5 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				1F2947B91DEEA33000A4BBB5 /* UIBarButtonItem-Extension.swift */,
+				1F2947C11DEECF8900A4BBB5 /* UIColor-Extension.swift */,
 			);
 			name = Extension;
 			path = Extention;
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F29476C1DED833F00A4BBB5 /* AppDelegate.swift in Sources */,
+				1F2947C21DEECF8900A4BBB5 /* UIColor-Extension.swift in Sources */,
 				1F2947AD1DEE96ED00A4BBB5 /* MainTabBarViewController.swift in Sources */,
 				1F2947BC1DEEBCD600A4BBB5 /* PageTitleView.swift in Sources */,
 				1F2947C01DEECB1E00A4BBB5 /* PageContentView.swift in Sources */,

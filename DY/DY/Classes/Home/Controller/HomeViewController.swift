@@ -9,14 +9,28 @@
 import UIKit
 
 
-private let kPageTitleH:CGFloat = 40
+private let kPageTitleH : CGFloat = 40
 class HomeViewController: UIViewController {
     //MARK: - 懒加载属性
-    fileprivate lazy var pageTitleView:PageTitleView = {
+    fileprivate lazy var pageTitleView : PageTitleView = {
         let rect = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kPageTitleH)
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
         let pageTitleV = PageTitleView(frame: rect, titlesArr: titles)
         return pageTitleV
+    }()
+    fileprivate lazy var pageContentView : PageContentView = {
+        //1.确定contentView的frame
+        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kPageTitleH - kTabbarH
+        let rect = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kPageTitleH, width: kScreenW, height: contentH )
+        //2.子控制器
+        var childVcs = [UIViewController]()
+        for _ in 0..<4 {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+            childVcs.append(vc)
+        }
+        let contentView = PageContentView(frame:rect , childVcs: childVcs, parentsViewControll: self)
+        return contentView
     }()
     
     override func viewDidLoad() {
@@ -38,6 +52,8 @@ extension HomeViewController {
         //添加pageTitleView
         view.addSubview(pageTitleView)
         
+        //添加pageContentView
+        view.addSubview(pageContentView)
     }
     
     //MARK: - 设置导航栏
