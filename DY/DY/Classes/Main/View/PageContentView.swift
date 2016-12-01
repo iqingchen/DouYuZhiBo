@@ -135,7 +135,6 @@ extension PageContentView : UICollectionViewDelegate {
         }
         //3.将progress／sourceIndex／targetIndex传递出去
         delegate?.pageContentViewWithScroll(contentView: self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
-//        print("progress:\(progress)---sourceIndex:\(sourceIndex)---targetIndex:\(targetIndex)")
     }
 }
 

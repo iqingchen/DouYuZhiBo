@@ -25,7 +25,9 @@ class HomeViewController: UIViewController {
         let rect = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kPageTitleH, width: kScreenW, height: contentH )
         //2.子控制器
         var childVcs = [UIViewController]()
-        for _ in 0..<4 {
+        let recommondVC = RecommendViewController()
+        childVcs.append(recommondVC)
+        for _ in 0..<3 {
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVcs.append(vc)
