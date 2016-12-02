@@ -119,6 +119,7 @@ extension PageTitleView {
         
         //2.设置新点击的label选中
         guard let newLabel = tap.view as? UILabel else{return}
+        if newLabel.tag == currentIndex {return}
         newLabel.textColor = UIColor.orange
         currentIndex = newLabel.tag
         

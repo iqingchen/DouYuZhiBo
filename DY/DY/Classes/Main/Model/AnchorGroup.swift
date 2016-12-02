@@ -26,6 +26,10 @@ class AnchorGroup: NSObject {
     ///定义主播模型对象数组
     lazy var anchors : [AnchorModel] = [AnchorModel]()
     
+    override init() {
+        
+    }
+    
     init(dict : [String : NSObject]) {
         super.init()
         setValuesForKeys(dict)

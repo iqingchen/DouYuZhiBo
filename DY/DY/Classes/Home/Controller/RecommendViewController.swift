@@ -63,13 +63,11 @@ extension RecommendViewController {
 //MARK: - 实现collectionView的datasource代理方法
 extension RecommendViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return recommendVM.anchorGroups.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 8
-        }
-        return 4
+        let group = recommendVM.anchorGroups[section]
+        return group.anchors.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell : UICollectionViewCell!
@@ -97,6 +95,10 @@ extension RecommendViewController : UICollectionViewDataSource, UICollectionView
 //MARK: - 网络请求
 extension RecommendViewController {
     func loadData() {
-        recommendVM.requsetData()
+        //请求数据
+        recommendVM.requsetData {
+            print("-------\(self.recommendVM.anchorGroups)")
+            self.collectionView.reloadData()
+        }
     }
 }
