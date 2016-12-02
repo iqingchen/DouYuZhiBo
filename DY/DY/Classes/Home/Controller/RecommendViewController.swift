@@ -39,6 +39,7 @@ class RecommendViewController: UIViewController {
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kReusableViewHeadID)
         return collectionView
     }()
+    fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     
     //MARK: - 系统回调
     override func viewDidLoad() {
@@ -47,7 +48,7 @@ class RecommendViewController: UIViewController {
         //设置UI
         setupUI()
         //网络请求
-        requestData()
+        loadData()
     }
 }
 
@@ -95,7 +96,7 @@ extension RecommendViewController : UICollectionViewDataSource, UICollectionView
 
 //MARK: - 网络请求
 extension RecommendViewController {
-    func requestData() {
-        
+    func loadData() {
+        recommendVM.requsetData()
     }
 }
