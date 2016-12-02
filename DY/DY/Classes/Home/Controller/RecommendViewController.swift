@@ -46,6 +46,8 @@ class RecommendViewController: UIViewController {
         view.backgroundColor = UIColor.green
         //设置UI
         setupUI()
+        //网络请求
+        requestData()
     }
 }
 
@@ -88,5 +90,12 @@ extension RecommendViewController : UICollectionViewDataSource, UICollectionView
             return CGSize(width: kItemW, height: kPrettyItemH)
         }
         return CGSize(width: kItemW, height: kNormalItemH)
+    }
+}
+
+//MARK: - 网络请求
+extension RecommendViewController {
+    func requestData() {
+        
     }
 }
