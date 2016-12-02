@@ -74,6 +74,9 @@ extension RecommendViewModel {
             //3.遍历数组，获取字典，并将字典转成模型对象
             for dic in dataArr {
                 let group = AnchorGroup(dict: dic)
+                if group.anchors.count == 0 {
+                    continue
+                }
                 self.anchorGroups.append(group)
             }
             dGroup.leave()

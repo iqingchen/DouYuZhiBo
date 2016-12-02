@@ -80,8 +80,9 @@ extension RecommendViewController : UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kReusableViewHeadID, for: indexPath)
-        return header
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kReusableViewHeadID, for: indexPath) as! CollectionHeaderView
+        headerView.group = recommendVM.anchorGroups[indexPath.section]
+        return headerView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -97,7 +98,7 @@ extension RecommendViewController {
     func loadData() {
         //请求数据
         recommendVM.requsetData {
-            print("-------\(self.recommendVM.anchorGroups)")
+            print("-------\(self.recommendVM.anchorGroups.count)")
             self.collectionView.reloadData()
         }
     }
