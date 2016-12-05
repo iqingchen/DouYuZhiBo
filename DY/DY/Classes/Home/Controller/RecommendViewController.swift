@@ -70,17 +70,14 @@ extension RecommendViewController : UICollectionViewDataSource, UICollectionView
         return group.anchors.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : CollectionBaseCell!
         if indexPath.section == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! CollectionPrettyCell
-            let group = recommendVM.anchorGroups[indexPath.section]
-            cell.anchor = group.anchors[indexPath.row]
-            return cell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! CollectionPrettyCell
         }else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
-            let group = recommendVM.anchorGroups[indexPath.section]
-            cell.anchor = group.anchors[indexPath.row]
-            return cell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
         }
+        cell.anchor = recommendVM.anchorGroups[indexPath.section].anchors[indexPath.row]
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
