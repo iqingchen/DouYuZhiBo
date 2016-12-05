@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,39 +42,40 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11万在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sZ-tT-sR3">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMw-yH-AJK">
                         <rect key="frame" x="154" y="5" width="60" height="20"/>
-                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.49774038461538461" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.49774038459999997" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="6Bf-nJ-8Q6"/>
-                            <constraint firstAttribute="width" constant="60" id="RBt-xd-T7c"/>
+                            <constraint firstAttribute="height" constant="20" id="CBb-KO-s2D"/>
+                            <constraint firstAttribute="width" constant="60" id="DRW-Yo-Sdu"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="3"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        </userDefinedRuntimeAttributes>
-                    </label>
+                        <state key="normal" title="11万人在线">
+                            <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="3sZ-tT-sR3" firstAttribute="top" secondItem="dgG-cs-CzJ" secondAttribute="top" constant="5" id="8T1-Rj-5hV"/>
+                <constraint firstItem="NMw-yH-AJK" firstAttribute="top" secondItem="dgG-cs-CzJ" secondAttribute="top" constant="5" id="6FH-sS-tl7"/>
                 <constraint firstAttribute="trailing" secondItem="dgG-cs-CzJ" secondAttribute="trailing" id="Q7t-pS-LMn"/>
                 <constraint firstItem="ea4-2h-2D0" firstAttribute="top" secondItem="Pr1-U0-9aO" secondAttribute="bottom" constant="5" id="TtK-nS-pES"/>
                 <constraint firstItem="ea4-2h-2D0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="V1K-nd-6QX"/>
                 <constraint firstItem="Pr1-U0-9aO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ayO-oy-yQ1"/>
                 <constraint firstItem="dgG-cs-CzJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dhm-RA-h5Q"/>
                 <constraint firstItem="Pr1-U0-9aO" firstAttribute="top" secondItem="dgG-cs-CzJ" secondAttribute="bottom" constant="5" id="n51-fN-y9a"/>
-                <constraint firstItem="3sZ-tT-sR3" firstAttribute="trailing" secondItem="dgG-cs-CzJ" secondAttribute="trailing" constant="-5" id="pKF-aD-4CY"/>
+                <constraint firstItem="NMw-yH-AJK" firstAttribute="trailing" secondItem="dgG-cs-CzJ" secondAttribute="trailing" constant="-5" id="rho-rX-cSx"/>
                 <constraint firstAttribute="bottom" secondItem="ea4-2h-2D0" secondAttribute="bottom" constant="10" id="tQw-xi-tSW"/>
                 <constraint firstItem="dgG-cs-CzJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="u4b-iC-TtA"/>
             </constraints>
             <size key="customSize" width="219" height="250"/>
-            <point key="canvasLocation" x="-34.5" y="-89"/>
+            <connections>
+                <outlet property="cityNameBtn" destination="ea4-2h-2D0" id="eaE-9o-rQ4"/>
+                <outlet property="iconImageView" destination="dgG-cs-CzJ" id="jqJ-8i-Dus"/>
+                <outlet property="nickNameLabel" destination="Pr1-U0-9aO" id="aQw-xh-XJK"/>
+                <outlet property="onlineBtn" destination="NMw-yH-AJK" id="Sdo-za-BSV"/>
+            </connections>
+            <point key="canvasLocation" x="-268.5" y="-72"/>
         </collectionViewCell>
     </objects>
     <resources>
