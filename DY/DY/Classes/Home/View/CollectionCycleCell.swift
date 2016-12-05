@@ -1,0 +1,27 @@
+//
+//  CollectionCycleCell.swift
+//  DY
+//
+//  Created by zhang on 16/12/5.
+//  Copyright © 2016年 zhang. All rights reserved.
+//
+
+import UIKit
+import Kingfisher
+
+class CollectionCycleCell: UICollectionViewCell {
+    
+    // MARK: 控件属性
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    // MARK: 定义模型属性
+    var cycleModel : CycleModel? {
+        didSet{
+            titleLabel.text = cycleModel?.title
+            
+            let url = URL(string: cycleModel?.pic_url ?? "")!
+            iconImageView.kf.setImage(with: url , placeholder: UIImage(named: "Img_default"))
+        }
+    }
+}

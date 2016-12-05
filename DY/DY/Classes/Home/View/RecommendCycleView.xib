@@ -16,7 +16,6 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hVL-jJ-Tst">
                     <rect key="frame" x="0.0" y="0.0" width="488" height="218"/>
-                    <color key="backgroundColor" red="1" green="0.6705882353" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NeF-KD-f9n">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -24,33 +23,20 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="bdi-tr-tmD"/>
-                        <outlet property="delegate" destination="-1" id="imw-jr-LNf"/>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="OtM-YO-w2r"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="NHg-5b-lxJ"/>
                     </connections>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjM-ui-ORJ">
-                    <rect key="frame" x="0.0" y="188" width="488" height="30"/>
-                    <subviews>
-                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9ge-20-Sds">
-                            <rect key="frame" x="408" y="-3.5" width="60" height="37"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="60" id="5cH-Lx-Jfa"/>
-                            </constraints>
-                        </pageControl>
-                    </subviews>
-                    <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="0.19936298076923076" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="8M5-WF-K68"/>
-                        <constraint firstItem="9ge-20-Sds" firstAttribute="centerY" secondItem="rjM-ui-ORJ" secondAttribute="centerY" id="ciz-g4-UyL"/>
-                        <constraint firstAttribute="trailing" secondItem="9ge-20-Sds" secondAttribute="trailing" constant="20" id="q6U-Kx-O56"/>
-                    </constraints>
-                </view>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9ge-20-Sds">
+                    <rect key="frame" x="429" y="186" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="rjM-ui-ORJ" secondAttribute="bottom" id="2DL-uy-Pu3"/>
-                <constraint firstAttribute="trailing" secondItem="rjM-ui-ORJ" secondAttribute="trailing" id="5C5-9S-Iyh"/>
-                <constraint firstItem="rjM-ui-ORJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JcC-vU-ikG"/>
+                <constraint firstAttribute="bottom" secondItem="9ge-20-Sds" secondAttribute="bottom" constant="-5" id="D1C-3B-Thb"/>
+                <constraint firstAttribute="trailing" secondItem="9ge-20-Sds" secondAttribute="trailing" constant="20" id="GC5-aI-Wo0"/>
                 <constraint firstItem="hVL-jJ-Tst" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UaH-Ke-jnh"/>
                 <constraint firstAttribute="bottom" secondItem="hVL-jJ-Tst" secondAttribute="bottom" id="Viq-Kh-hft"/>
                 <constraint firstAttribute="trailing" secondItem="hVL-jJ-Tst" secondAttribute="trailing" id="dHY-Vk-qYo"/>

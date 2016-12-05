@@ -41,7 +41,7 @@ class RecommendViewController: UIViewController {
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kReusableViewHeadID)
         return collectionView
     }()
-    fileprivate lazy var recommendCycleView : UIView = {
+    fileprivate lazy var recommendCycleView : RecommendCycleView = {
         let cycleView = RecommendCycleView.createRecommendCycleView()
         cycleView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: -kCycleViewH)
         return cycleView
@@ -107,9 +107,13 @@ extension RecommendViewController : UICollectionViewDataSource, UICollectionView
 //MARK: - 网络请求
 extension RecommendViewController {
     func loadData() {
-        //请求数据
-        recommendVM.requsetData {
+        //请求视频数据
+        recommendVM.requestData {
             self.collectionView.reloadData()
+        }
+        //请求无限轮播的数据
+        recommendVM.requestCycleData {
+            self.recommendCycleView.cycleModels = self.recommendVM.cycleModels
         }
     }
 }
