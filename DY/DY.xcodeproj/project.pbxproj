@@ -36,6 +36,8 @@
 		1F98503F1DF13D31009595B3 /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98503E1DF13D31009595B3 /* AnchorGroup.swift */; };
 		1F9850411DF13F5C009595B3 /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9850401DF13F5C009595B3 /* AnchorModel.swift */; };
 		1F9850431DF503AB009595B3 /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9850421DF503AB009595B3 /* CollectionBaseCell.swift */; };
+		1F9850451DF5073D009595B3 /* RecommendCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9850441DF5073D009595B3 /* RecommendCycleView.swift */; };
+		1F9850471DF5074B009595B3 /* RecommendCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9850461DF5074B009595B3 /* RecommendCycleView.xib */; };
 		5FB6E2B8301E513967DA4781 /* Pods_DY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7ED12D9B79ADEC18CEC3C /* Pods_DY.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		1F98503E1DF13D31009595B3 /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
 		1F9850401DF13F5C009595B3 /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		1F9850421DF503AB009595B3 /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
+		1F9850441DF5073D009595B3 /* RecommendCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCycleView.swift; sourceTree = "<group>"; };
+		1F9850461DF5074B009595B3 /* RecommendCycleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendCycleView.xib; sourceTree = "<group>"; };
 		9DDAE184DDAA6AAC690BC793 /* Pods-DY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DY/Pods-DY.debug.xcconfig"; sourceTree = "<group>"; };
 		ACF7ED12D9B79ADEC18CEC3C /* Pods_DY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBC8B3F37AC5FFFAEDFA696 /* Pods-DY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DY.release.xcconfig"; path = "Pods/Target Support Files/Pods-DY/Pods-DY.release.xcconfig"; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 			children = (
 				1F2947CD1DF021AA00A4BBB5 /* CollectionHeaderView.swift */,
 				1F2947CE1DF021AA00A4BBB5 /* CollectionHeaderView.xib */,
+				1F9850441DF5073D009595B3 /* RecommendCycleView.swift */,
+				1F9850461DF5074B009595B3 /* RecommendCycleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 				1F2947711DED833F00A4BBB5 /* Main.storyboard in Resources */,
 				1F2947941DEE7CAD00A4BBB5 /* Home.storyboard in Resources */,
 				1F2947A31DEE929F00A4BBB5 /* Profile.storyboard in Resources */,
+				1F9850471DF5074B009595B3 /* RecommendCycleView.xib in Resources */,
 				1F2947C81DF0191F00A4BBB5 /* CollectionNormalCell.xib in Resources */,
 				1F2947CC1DF0193B00A4BBB5 /* CollectionPrettyCell.xib in Resources */,
 				1F2947991DEE7CF100A4BBB5 /* Follow.storyboard in Resources */,
@@ -473,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F9850451DF5073D009595B3 /* RecommendCycleView.swift in Sources */,
 				1F29476C1DED833F00A4BBB5 /* AppDelegate.swift in Sources */,
 				1F2947C21DEECF8900A4BBB5 /* UIColor-Extension.swift in Sources */,
 				1F2947C41DF011C500A4BBB5 /* RecommendViewController.swift in Sources */,

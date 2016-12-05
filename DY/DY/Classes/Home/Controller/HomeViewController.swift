@@ -58,6 +58,9 @@ extension HomeViewController {
         
         //添加pageContentView
         view.addSubview(pageContentView)
+        
+        
+        
     }
     
     //MARK: - 设置导航栏

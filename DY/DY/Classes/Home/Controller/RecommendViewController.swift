@@ -15,6 +15,8 @@ private let kNormalItemH : CGFloat = kItemW * 3 / 4
 private let kHeaderViewH : CGFloat = 50
 private let kPrettyItemH : CGFloat = kItemW * 4 / 3
 
+private let kCycleViewH = kScreenW * 3 / 8
+
 private let kNormalCellID : String = "kNormalCellID"
 private let kPrettyCellID : String = "kPrettyCellID"
 private let kReusableViewHeadID : String = "kReusableViewHeadID"
@@ -39,6 +41,11 @@ class RecommendViewController: UIViewController {
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kReusableViewHeadID)
         return collectionView
     }()
+    fileprivate lazy var recommendCycleView : UIView = {
+        let cycleView = RecommendCycleView.createRecommendCycleView()
+        cycleView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: -kCycleViewH)
+        return cycleView
+    }()
     fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     
     //MARK: - 系统回调
@@ -57,6 +64,9 @@ extension RecommendViewController {
     fileprivate func setupUI() {
         //添加collectionView
         view.addSubview(collectionView)
+        //添加无限轮播
+        collectionView.addSubview(recommendCycleView)
+        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH, 0, 0, 0)
     }
 }
 
@@ -99,7 +109,6 @@ extension RecommendViewController {
     func loadData() {
         //请求数据
         recommendVM.requsetData {
-            print("-------\(self.recommendVM.anchorGroups.count)")
             self.collectionView.reloadData()
         }
     }
