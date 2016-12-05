@@ -16,6 +16,7 @@ private let kHeaderViewH : CGFloat = 50
 private let kPrettyItemH : CGFloat = kItemW * 4 / 3
 
 private let kCycleViewH = kScreenW * 3 / 8
+private let kGameViewH : CGFloat = 90
 
 private let kNormalCellID : String = "kNormalCellID"
 private let kPrettyCellID : String = "kPrettyCellID"
@@ -43,8 +44,13 @@ class RecommendViewController: UIViewController {
     }()
     fileprivate lazy var recommendCycleView : RecommendCycleView = {
         let cycleView = RecommendCycleView.createRecommendCycleView()
-        cycleView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: -kCycleViewH)
+        cycleView.frame = CGRect(x: 0, y: -(kGameViewH + kCycleViewH), width: kScreenW, height: kCycleViewH)
         return cycleView
+    }()
+    fileprivate lazy var recommendGameView : RecommendGameView = {
+        let gameView = RecommendGameView.createRecommendGameView()
+        gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+        return gameView
     }()
     fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     
@@ -66,7 +72,10 @@ extension RecommendViewController {
         view.addSubview(collectionView)
         //添加无限轮播
         collectionView.addSubview(recommendCycleView)
-        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH, 0, 0, 0)
+        //添加游戏推荐
+        collectionView.addSubview(recommendGameView)
+        
+        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH + kGameViewH, 0, 0, 0)
     }
 }
 
@@ -110,6 +119,8 @@ extension RecommendViewController {
         //请求视频数据
         recommendVM.requestData {
             self.collectionView.reloadData()
+            //将数据传给gameView
+            self.recommendGameView.anchorGroup = self.recommendVM.anchorGroups
         }
         //请求无限轮播的数据
         recommendVM.requestCycleData {

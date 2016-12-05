@@ -9,7 +9,7 @@
 import UIKit
 
 //MARK: - 设置常量
-private let cycleViewCell : String = "cycleViewCell"
+private let kCycleViewCell : String = "kCycleViewCell"
 
 class RecommendCycleView: UIView {
     //MARK: - 定义属性
@@ -37,11 +37,10 @@ class RecommendCycleView: UIView {
     //MARK: - 系统回调
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         // 设置该控件不随着父控件的拉伸而拉伸
         autoresizingMask = UIViewAutoresizing()
         //注册cell
-        collectionView.register(UINib.init(nibName: "CollectionCycleCell", bundle: nil), forCellWithReuseIdentifier: cycleViewCell)
+        collectionView.register(UINib.init(nibName: "CollectionCycleCell", bundle: nil), forCellWithReuseIdentifier: kCycleViewCell)
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -54,7 +53,6 @@ class RecommendCycleView: UIView {
         
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
-        collectionView.backgroundColor = UIColor.red
     }
 }
 
@@ -71,7 +69,7 @@ extension RecommendCycleView : UICollectionViewDataSource{
         return (cycleModels?.count ?? 0) * 10000
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cycleViewCell, for: indexPath) as! CollectionCycleCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCycleViewCell, for: indexPath) as! CollectionCycleCell
         cell.cycleModel = cycleModels![indexPath.row % cycleModels!.count]
         return cell
     }
