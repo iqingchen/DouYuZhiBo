@@ -16,6 +16,7 @@ private let kHeaderViewH : CGFloat = 50
 
 
 private let kNormalCellID : String = "kNormalCellID"
+private let kPrettyCellID : String = "kPrettyCellID"
 private let kReusableViewHeadID : String = "kReusableViewHeadID"
 
 class BaseAnchorViewController: UIViewController {
@@ -31,12 +32,15 @@ class BaseAnchorViewController: UIViewController {
         
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.backgroundColor = UIColor.white
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
+        collectionView.register(UINib(nibName: "CollectionPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCellID)
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kReusableViewHeadID)
         return collectionView
-        }()
+    }()
+    
 
     //MARK: - 系统回调函数
     override func viewDidLoad() {
@@ -51,7 +55,7 @@ class BaseAnchorViewController: UIViewController {
 
 //MARK: - 设置UI
 extension BaseAnchorViewController {
-    fileprivate func setupUI() {
+    func setupUI() {
         //1.添加collectionView
         view.addSubview(collectionView)
     }
@@ -63,7 +67,7 @@ extension BaseAnchorViewController {
 }
 
 //MARK: - 实现collectionView的数据源协议
-extension BaseAnchorViewController : UICollectionViewDataSource {
+extension BaseAnchorViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return baseVM.anchorGroups.count
     }
