@@ -22,6 +22,19 @@ private let kReusableViewHeadID : String = "kReusableViewHeadID"
 class GameViewController: UIViewController {
     //MARK: - 懒加载
     fileprivate lazy var gameViewModel : GameViewModel = GameViewModel()
+    fileprivate lazy var commonHeaderView : CollectionHeaderView = {
+        let header = CollectionHeaderView.collectionHeaderView()
+        header.frame = CGRect(x: 0, y: -(kHeaderViewH + kGameViewH), width: kScreenW, height: kHeaderViewH)
+        header.titleLabel.text = "常见"
+        header.iconImageView.image = UIImage(named: "Img_orange")
+        header.moreBtn.isHidden = true
+        return header
+    }()
+    fileprivate lazy var recommendGameView : RecommendGameView = {
+        let gameView = RecommendGameView.createRecommendGameView()
+        gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+        return gameView
+    }()
     fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: kItemW, height: kItemH)
@@ -56,15 +69,23 @@ extension GameViewController {
     fileprivate func setupUI() {
         //添加collectionView
         view.addSubview(collectionView)
+        //添加常见header
+        collectionView.addSubview(commonHeaderView)
+        //添加常见游戏View
+        collectionView.addSubview(recommendGameView)
         
+        collectionView.contentInset = UIEdgeInsetsMake(kHeaderViewH + kGameViewH, 0, 0, 0)
     }
 }
 
 //MARK: - 网络请求
 extension GameViewController {
     fileprivate func requestData()  {
-        gameViewModel.loadAllGanmesData { 
+        gameViewModel.loadAllGanmesData {
+            //1.刷新表格
             self.collectionView.reloadData()
+            //2.讲数据传给recommendGameView
+            self.recommendGameView.baseGameModel = Array(self.gameViewModel.games[0..<10])
         }
     }
 }

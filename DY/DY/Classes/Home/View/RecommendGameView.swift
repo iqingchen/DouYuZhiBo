@@ -13,15 +13,8 @@ private let kGameViewCell : String = "kGameViewCell"
 
 class RecommendGameView: UIView {
     //MARK: - 定义属性
-    var anchorGroup : [AnchorGroup]?{
+    var baseGameModel : [BaseGameModel]?{
         didSet{
-            //移除前两组
-            anchorGroup?.removeFirst()
-            anchorGroup?.removeFirst()
-            //添加更多这一组
-            let group = AnchorGroup()
-            group.tag_name = "更多"
-            anchorGroup?.append(group)
             //刷新
             collectionView.reloadData()
         }
@@ -49,11 +42,11 @@ extension RecommendGameView {
 //MARK: - 实现collectionView的数据源方法
 extension RecommendGameView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return anchorGroup?.count ?? 0
+        return baseGameModel?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameViewCell, for: indexPath) as! CollectionGameCell
-        cell.baseGame = anchorGroup![indexPath.row]
+        cell.baseGame = baseGameModel![indexPath.row]
         return cell
     }
 }
