@@ -52,6 +52,8 @@
 		1FF8BD7D1DF664D2003B0C3D /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8BD7C1DF664D2003B0C3D /* AmuseViewController.swift */; };
 		1FF8BD7F1DF668B9003B0C3D /* AmuseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8BD7E1DF668B9003B0C3D /* AmuseViewModel.swift */; };
 		1FF8BD821DF6ABBD003B0C3D /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8BD811DF6ABBD003B0C3D /* BaseViewModel.swift */; };
+		1FF8BD841DF6B24B003B0C3D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8BD831DF6B24B003B0C3D /* BaseViewController.swift */; };
+		1FF8BD861DF6B764003B0C3D /* BaseAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8BD851DF6B764003B0C3D /* BaseAnchorViewController.swift */; };
 		5FB6E2B8301E513967DA4781 /* Pods_DY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7ED12D9B79ADEC18CEC3C /* Pods_DY.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,8 @@
 		1FF8BD7C1DF664D2003B0C3D /* AmuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
 		1FF8BD7E1DF668B9003B0C3D /* AmuseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseViewModel.swift; sourceTree = "<group>"; };
 		1FF8BD811DF6ABBD003B0C3D /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		1FF8BD831DF6B24B003B0C3D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1FF8BD851DF6B764003B0C3D /* BaseAnchorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnchorViewController.swift; sourceTree = "<group>"; };
 		9DDAE184DDAA6AAC690BC793 /* Pods-DY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DY/Pods-DY.debug.xcconfig"; sourceTree = "<group>"; };
 		ACF7ED12D9B79ADEC18CEC3C /* Pods_DY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBC8B3F37AC5FFFAEDFA696 /* Pods-DY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DY.release.xcconfig"; path = "Pods/Target Support Files/Pods-DY/Pods-DY.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 			children = (
 				1F29476F1DED833F00A4BBB5 /* Main.storyboard */,
 				1F2947AA1DEE96ED00A4BBB5 /* MainTabBarViewController.swift */,
+				1FF8BD831DF6B24B003B0C3D /* BaseViewController.swift */,
+				1FF8BD851DF6B764003B0C3D /* BaseAnchorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -537,6 +543,7 @@
 				1F29476C1DED833F00A4BBB5 /* AppDelegate.swift in Sources */,
 				1FF8BD7F1DF668B9003B0C3D /* AmuseViewModel.swift in Sources */,
 				1F2947C21DEECF8900A4BBB5 /* UIColor-Extension.swift in Sources */,
+				1FF8BD841DF6B24B003B0C3D /* BaseViewController.swift in Sources */,
 				1FF8BD771DF655E7003B0C3D /* GameViewModel.swift in Sources */,
 				1F2947C41DF011C500A4BBB5 /* RecommendViewController.swift in Sources */,
 				1FF8BD751DF64E25003B0C3D /* GameViewController.swift in Sources */,
@@ -546,6 +553,7 @@
 				1F2947CB1DF0193B00A4BBB5 /* CollectionPrettyCell.swift in Sources */,
 				1FF8BD821DF6ABBD003B0C3D /* BaseViewModel.swift in Sources */,
 				1F98504C1DF51B14009595B3 /* CollectionCycleCell.swift in Sources */,
+				1FF8BD861DF6B764003B0C3D /* BaseAnchorViewController.swift in Sources */,
 				1FF8BD791DF65725003B0C3D /* GameModel.swift in Sources */,
 				1FF8BD7B1DF65921003B0C3D /* BaseGameModel.swift in Sources */,
 				1F9850491DF51873009595B3 /* CycleModel.swift in Sources */,

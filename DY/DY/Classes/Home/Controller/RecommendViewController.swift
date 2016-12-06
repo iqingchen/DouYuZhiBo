@@ -24,6 +24,7 @@ private let kReusableViewHeadID : String = "kReusableViewHeadID"
 
 class RecommendViewController: UIViewController {
     //MARK: - 懒加载
+    fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: kItemW, height: kNormalItemH)
@@ -52,7 +53,6 @@ class RecommendViewController: UIViewController {
         gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
         return gameView
     }()
-    fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     
     //MARK: - 系统回调
     override func viewDidLoad() {
