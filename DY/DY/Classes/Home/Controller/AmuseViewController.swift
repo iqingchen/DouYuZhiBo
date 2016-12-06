@@ -21,6 +21,7 @@ private let kReusableViewHeadID : String = "kReusableViewHeadID"
 class AmuseViewController: UIViewController {
 
     //MARK: - 懒加载
+    fileprivate lazy var amuseViewModel : AmuseViewModel = AmuseViewModel()
     fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: kItemW, height: kNormalItemH)
@@ -43,6 +44,8 @@ class AmuseViewController: UIViewController {
         
         //设置ui
         setupUI()
+        //请求数据
+        loadData()
     }
 }
 
@@ -53,20 +56,31 @@ extension AmuseViewController {
          view.addSubview(collectionView)
     }
 }
+//MARK: - 请求娱乐数据
+extension AmuseViewController {
+    fileprivate func loadData() {
+        amuseViewModel.loadAmuseData { 
+            self.collectionView.reloadData()
+        }
+    }
+}
+
 //MARK: - 实现collectionView的数据源协议
 extension AmuseViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 10
+        return amuseViewModel.anchorGroups.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return amuseViewModel.anchorGroups[section].anchors.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
+        cell.anchor = amuseViewModel.anchorGroups[indexPath.section].anchors[indexPath.row]
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kReusableViewHeadID, for: indexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kReusableViewHeadID, for: indexPath) as! CollectionHeaderView
+        header.group = amuseViewModel.anchorGroups[indexPath.section]
         return header
     }
 }
