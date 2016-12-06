@@ -53,7 +53,7 @@ extension RecommendGameView : UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameViewCell, for: indexPath) as! CollectionGameCell
-        cell.group = anchorGroup![indexPath.row]
+        cell.baseGame = anchorGroup![indexPath.row]
         return cell
     }
 }

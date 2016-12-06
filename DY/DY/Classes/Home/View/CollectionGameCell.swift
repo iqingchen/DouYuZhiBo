@@ -14,11 +14,11 @@ class CollectionGameCell: UICollectionViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    var group : AnchorGroup? {
+    var baseGame : BaseGameModel? {
         didSet{
-            titleLabel.text = group?.tag_name
+            titleLabel.text = baseGame?.tag_name
             
-            if let iconURL = URL(string: group?.icon_url ?? "") {
+            if let iconURL = URL(string: baseGame?.icon_url ?? "") {
                 iconImageView.kf.setImage(with: iconURL)
             } else {
                 iconImageView.image = UIImage(named: "home_more_btn")
