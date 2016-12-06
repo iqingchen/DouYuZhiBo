@@ -8,8 +8,7 @@
 
 import UIKit
 
-class RecommendViewModel {
-    lazy var anchorGroups : [AnchorGroup] = [AnchorGroup]()
+class RecommendViewModel : BaseViewModel{
     lazy var cycleModels : [CycleModel] = [CycleModel]()
     fileprivate lazy var bigDataGroup : AnchorGroup = AnchorGroup()
     fileprivate lazy var prettyGroup : AnchorGroup = AnchorGroup()
@@ -68,19 +67,7 @@ extension RecommendViewModel {
         
         //请求第2-12部分数据
         dGroup.enter()
-        NetworkTools.requestData(type: .GET, urlString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: para) {(result) in
-            //1.将result转成字典类型
-            guard let resultDic = result as? [String : NSObject] else{return}
-            //2.根据data该key，获取数组
-            guard let dataArr = resultDic["data"] as? [[String : NSObject]] else {return}
-            //3.遍历数组，获取字典，并将字典转成模型对象
-            for dic in dataArr {
-                let group = AnchorGroup(dict: dic)
-                if group.anchors.count == 0 {
-                    continue
-                }
-                self.anchorGroups.append(group)
-            }
+        loadAnchorData(URLString: "http://capi.douyucdn.cn/api/v1/getHotCate"){
             dGroup.leave()
         }
         

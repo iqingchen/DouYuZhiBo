@@ -76,7 +76,6 @@ extension HomeViewController {
         let qrcodeItem = UIBarButtonItem(image: "Image_scan", highlightImage: "Image_scan_click", size: size)
         
         navigationItem.rightBarButtonItems = [historyItem, searchItem, qrcodeItem]
-        
     }
     
 }
