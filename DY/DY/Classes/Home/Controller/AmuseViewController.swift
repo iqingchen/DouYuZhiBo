@@ -45,6 +45,9 @@ extension AmuseViewController {
             var tempGroups = self.anumseViewModel.anchorGroups
             tempGroups.removeFirst()
             self.amuseMenuView.anchorGroup = tempGroups
+            
+            //数据请求完成
+            self.loadDataFinished()
         }
     }
 }

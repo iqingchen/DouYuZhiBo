@@ -88,6 +88,8 @@ extension RecommendViewController {
             group.tag_name = "更多"
             anchorGroup.append(group)
             self.recommendGameView.baseGameModel = anchorGroup
+            //数据请求完成
+            self.loadDataFinished()
         }
         //请求无限轮播的数据
         recommendVM.requestCycleData {

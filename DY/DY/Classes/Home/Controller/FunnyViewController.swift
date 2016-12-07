@@ -25,6 +25,8 @@ extension FunnyViewController {
         baseVM = funnyVM
         funnyVM.loadFunnyData {
             self.collectionView.reloadData()
+            //数据请求完成
+            self.loadDataFinished()
         }
     }
 }

@@ -19,7 +19,7 @@ private let kNormalCellID : String = "kNormalCellID"
 private let kPrettyCellID : String = "kPrettyCellID"
 private let kReusableViewHeadID : String = "kReusableViewHeadID"
 
-class BaseAnchorViewController: UIViewController {
+class BaseAnchorViewController: BaseViewController {
     //MARK: - 懒加载
     var baseVM : BaseViewModel!
     lazy var collectionView : UICollectionView = {[unowned self] in
@@ -55,9 +55,12 @@ class BaseAnchorViewController: UIViewController {
 
 //MARK: - 设置UI
 extension BaseAnchorViewController {
-    func setupUI() {
+    override func setupUI() {
+        contentView = collectionView
         //1.添加collectionView
         view.addSubview(collectionView)
+        //执行父类方法
+        super.setupUI()
     }
 }
 //MARK: - 请求娱乐数据

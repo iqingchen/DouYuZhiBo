@@ -19,7 +19,7 @@ private let kGameViewH : CGFloat = 90
 private let kGameCellID : String = "kGameCellID"
 private let kReusableViewHeadID : String = "kReusableViewHeadID"
 
-class GameViewController: UIViewController {
+class GameViewController: BaseViewController {
     //MARK: - 懒加载
     fileprivate lazy var gameViewModel : GameViewModel = GameViewModel()
     fileprivate lazy var commonHeaderView : CollectionHeaderView = {
@@ -66,7 +66,9 @@ class GameViewController: UIViewController {
 
 //MARK: - 设置UI
 extension GameViewController {
-    fileprivate func setupUI() {
+    override func setupUI() {
+        contentView = collectionView
+        
         //添加collectionView
         view.addSubview(collectionView)
         //添加常见header
@@ -75,6 +77,8 @@ extension GameViewController {
         collectionView.addSubview(recommendGameView)
         
         collectionView.contentInset = UIEdgeInsetsMake(kHeaderViewH + kGameViewH, 0, 0, 0)
+        
+        super.setupUI()
     }
 }
 
@@ -86,6 +90,9 @@ extension GameViewController {
             self.collectionView.reloadData()
             //2.讲数据传给recommendGameView
             self.recommendGameView.baseGameModel = Array(self.gameViewModel.games[0..<10])
+            
+            //数据请求完成
+            self.loadDataFinished()
         }
     }
 }
