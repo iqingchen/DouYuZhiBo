@@ -67,7 +67,7 @@ extension RecommendViewModel {
         
         //请求第2-12部分数据
         dGroup.enter()
-        loadAnchorData(URLString: "http://capi.douyucdn.cn/api/v1/getHotCate"){
+        loadAnchorData(isGroupData: true, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate"){
             dGroup.leave()
         }
         
