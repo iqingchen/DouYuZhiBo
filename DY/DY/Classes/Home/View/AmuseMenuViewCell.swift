@@ -11,6 +11,13 @@ private let kGameCellID = "kGameCellID"
 
 class AmuseMenuViewCell: UICollectionViewCell {
 
+    // MARK: 数组模型
+    var groups : [AnchorGroup]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    // MARK: 属性
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -31,11 +38,12 @@ class AmuseMenuViewCell: UICollectionViewCell {
 
 extension AmuseMenuViewCell :  UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return groups?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath)
-        cell.backgroundColor = UIColor.randomColor()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath) as! CollectionGameCell
+        cell.baseGame = groups![indexPath.row]
+        cell.clipsToBounds = true
         return cell
     }
 }

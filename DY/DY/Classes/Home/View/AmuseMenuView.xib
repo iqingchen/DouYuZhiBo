@@ -30,9 +30,10 @@
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="dZh-cR-X2V">
                     <rect key="frame" x="258" y="297" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </pageControl>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.6705882353" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="fH6-wn-4ri" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="52l-IR-hpR"/>
                 <constraint firstItem="fH6-wn-4ri" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JZP-b4-O9Q"/>

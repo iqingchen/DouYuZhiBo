@@ -40,7 +40,11 @@ extension AmuseViewController {
         baseVM = anumseViewModel
         //2.请求数据
         anumseViewModel.loadAmuseData { 
-              self.collectionView.reloadData()
+            self.collectionView.reloadData()
+            //调整数据传给amuseView
+            var tempGroups = self.anumseViewModel.anchorGroups
+            tempGroups.removeFirst()
+            self.amuseMenuView.anchorGroup = tempGroups
         }
     }
 }
