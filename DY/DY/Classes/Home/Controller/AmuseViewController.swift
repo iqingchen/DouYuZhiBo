@@ -30,7 +30,6 @@ extension AmuseViewController {
         
         collectionView.contentInset = UIEdgeInsetsMake(kAmuseMenuViewH, 0, 0, 0)
     }
-    
 }
 
 //MARK: - 请求数据

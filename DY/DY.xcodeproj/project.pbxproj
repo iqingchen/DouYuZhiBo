@@ -32,6 +32,9 @@
 		1F2947D01DF021AA00A4BBB5 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2947CE1DF021AA00A4BBB5 /* CollectionHeaderView.xib */; };
 		1F8F56241DF7D42A005A58DE /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F56231DF7D42A005A58DE /* FunnyViewController.swift */; };
 		1F8F56261DF7D824005A58DE /* FunnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F56251DF7D824005A58DE /* FunnyViewModel.swift */; };
+		1F8F562D1DF8F277005A58DE /* RoomShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F562C1DF8F277005A58DE /* RoomShowViewController.swift */; };
+		1F8F562F1DF8F286005A58DE /* RoomNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F562E1DF8F286005A58DE /* RoomNormalViewController.swift */; };
+		1F8F56311DF8F72D005A58DE /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F56301DF8F72D005A58DE /* CustomNavigationController.swift */; };
 		1F98502F1DF11007009595B3 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98502E1DF11007009595B3 /* NetworkTools.swift */; };
 		1F98503A1DF11824009595B3 /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9850391DF11824009595B3 /* RecommendViewModel.swift */; };
 		1F98503C1DF126D0009595B3 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98503B1DF126D0009595B3 /* NSDate-Extension.swift */; };
@@ -103,6 +106,9 @@
 		1F2947CE1DF021AA00A4BBB5 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
 		1F8F56231DF7D42A005A58DE /* FunnyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
 		1F8F56251DF7D824005A58DE /* FunnyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyViewModel.swift; sourceTree = "<group>"; };
+		1F8F562C1DF8F277005A58DE /* RoomShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomShowViewController.swift; sourceTree = "<group>"; };
+		1F8F562E1DF8F286005A58DE /* RoomNormalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomNormalViewController.swift; sourceTree = "<group>"; };
+		1F8F56301DF8F72D005A58DE /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		1F98502E1DF11007009595B3 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		1F9850391DF11824009595B3 /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		1F98503B1DF126D0009595B3 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				1F29478F1DEE685100A4BBB5 /* Main */,
+				1F8F56271DF8F1C4005A58DE /* Room */,
 				1F2947A81DEE94F900A4BBB5 /* Home */,
 				1F2947A51DEE94DB00A4BBB5 /* Live */,
 				1F2947A41DEE94DB00A4BBB5 /* Follow */,
@@ -256,6 +263,7 @@
 				1F2947AA1DEE96ED00A4BBB5 /* MainTabBarViewController.swift */,
 				1FF8BD831DF6B24B003B0C3D /* BaseViewController.swift */,
 				1FF8BD851DF6B764003B0C3D /* BaseAnchorViewController.swift */,
+				1F8F56301DF8F72D005A58DE /* CustomNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -344,6 +352,47 @@
 			);
 			name = Extension;
 			path = Extention;
+			sourceTree = "<group>";
+		};
+		1F8F56271DF8F1C4005A58DE /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				1F8F562B1DF8F1C4005A58DE /* ViewModel */,
+				1F8F56291DF8F1C4005A58DE /* Model */,
+				1F8F562A1DF8F1C4005A58DE /* View */,
+				1F8F56281DF8F1C4005A58DE /* Controller */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		1F8F56281DF8F1C4005A58DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F8F562C1DF8F277005A58DE /* RoomShowViewController.swift */,
+				1F8F562E1DF8F286005A58DE /* RoomNormalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F8F56291DF8F1C4005A58DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1F8F562A1DF8F1C4005A58DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F8F562B1DF8F1C4005A58DE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1F9850381DF117EE009595B3 /* ViewModel */ = {
@@ -571,6 +620,8 @@
 				1FF8BD751DF64E25003B0C3D /* GameViewController.swift in Sources */,
 				1F2947AD1DEE96ED00A4BBB5 /* MainTabBarViewController.swift in Sources */,
 				1F98503F1DF13D31009595B3 /* AnchorGroup.swift in Sources */,
+				1F8F56311DF8F72D005A58DE /* CustomNavigationController.swift in Sources */,
+				1F8F562F1DF8F286005A58DE /* RoomNormalViewController.swift in Sources */,
 				1F2947C71DF0191F00A4BBB5 /* CollectionNormalCell.swift in Sources */,
 				1F2947CB1DF0193B00A4BBB5 /* CollectionPrettyCell.swift in Sources */,
 				1FF8BD821DF6ABBD003B0C3D /* BaseViewModel.swift in Sources */,
@@ -592,6 +643,7 @@
 				1FF8BD721DF54E12003B0C3D /* CollectionGameCell.swift in Sources */,
 				1F8F56261DF7D824005A58DE /* FunnyViewModel.swift in Sources */,
 				1F98502F1DF11007009595B3 /* NetworkTools.swift in Sources */,
+				1F8F562D1DF8F277005A58DE /* RoomShowViewController.swift in Sources */,
 				1F2947BA1DEEA33000A4BBB5 /* UIBarButtonItem-Extension.swift in Sources */,
 				1F98503A1DF11824009595B3 /* RecommendViewModel.swift in Sources */,
 				1F9850411DF13F5C009595B3 /* AnchorModel.swift in Sources */,
